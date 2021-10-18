@@ -16,10 +16,10 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->string('username');
-            $table->string('liked_by_user');
+            $table->boolean('liked_by_user')->default(false);
             $table->string('alt_description');
             $table->string('url');
-            $table->string('category');
+            $table->string('keywords');
             $table->timestamps();
         });
     }

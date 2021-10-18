@@ -28,7 +28,9 @@ class PhotoController extends Controller
     }
     public function getByCategory(Request $request)
     {
-        $query = $request->query;
+        // $query = $request->query;
+        $query = $request->get('query');
+        // dd($query);
         $data = Photo::where('keywords', 'like', '%' . $query . '%')->get();
         return response($data, 200);
 
@@ -104,7 +106,7 @@ class PhotoController extends Controller
             'liked_by_user',
             'alt_description',
             'url',
-            'category',
+            'keywords',
 
         ]);
 

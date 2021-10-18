@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('all', 'PhotoController@index');
-Route::post('addphoto', [PhotoController::class, 'store']
-);
+Route::post('addphoto', [PhotoController::class, 'store']);
 Route::put('update', 'PhotoController@update');
 Route::delete('delete', 'PhotoController@destroy');
+
+Route::get('getByCategory', [PhotoController::class, 'getByCategory']);
